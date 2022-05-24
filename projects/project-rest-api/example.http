@@ -1,0 +1,66 @@
+@local=http://localhost:3002
+
+### create user
+POST {{local}}/api/users
+Content-Type:application/json
+
+{
+    "name":"simcha1",
+    "password":"sifmch3q2",
+    "email":"ss@ssd.com",
+    "biz":true
+}
+
+### sign in
+POST {{local}}/api/auth
+Content-Type:application/json
+
+{
+    "email":"ss@ssd.com",
+    "password":"sifmch3q2"
+}
+
+### me
+GET {{local}}/api/users/me
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWZlZGIzODE3NzEwNGQ5MTU5OThiZTkiLCJiaXoiOnRydWUsImlhdCI6MTY0NDA5MjIzMX0.nKbVEYQLc_WKkthvLDUKHljLWl_Kf6mWrGc0-VMgr1g
+
+###create card
+POST {{local}}/api/cards
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWZlZGIzODE3NzEwNGQ5MTU5OThiZTkiLCJiaXoiOnRydWUsImlhdCI6MTY0NDA5MjIzMX0.nKbVEYQLc_WKkthvLDUKHljLWl_Kf6mWrGc0-VMgr1g
+Content-Type:application/json
+
+{
+    "bizName": "hello there",
+    "bizDescription":"hello again",
+    "bizAddress": "gent street",
+    "bizPhone":"078675473",
+    "bizImage":"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+  }
+
+###get card by id
+GET {{local}}/api/cards/61fedb38177104d915998be9
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWZlZGIzODE3NzEwNGQ5MTU5OThiZTkiLCJiaXoiOnRydWUsImlhdCI6MTY0NDA5MjIzMX0.nKbVEYQLc_WKkthvLDUKHljLWl_Kf6mWrGc0-VMgr1g
+
+
+### update card
+PUT {{local}}/api/cards/61fedb38177104d915998be9
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWZlZGIzODE3NzEwNGQ5MTU5OThiZTkiLCJiaXoiOnRydWUsImlhdCI6MTY0NDA5MjIzMX0.nKbVEYQLc_WKkthvLDUKHljLWl_Kf6mWrGc0-VMgr1g
+Content-Type:application/json
+
+{
+    "bizName": "hello there 1",
+    "bizDescription":"hello again 1",
+    "bizAddress": "gent street 1",
+    "bizPhone":"0786754732",
+    "bizImage":"https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+  }
+
+### delete card
+DELETE {{local}}/api/cards/61fae18c6a2c59c9621c88b9
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWZhZTE4YzZhMmM1OWM5NjIxYzg4YjkiLCJiaXoiOnRydWUsImlhdCI6MTY0NDA5MTUzMn0.g17zMIRlJKQgJyBSZLe7ll4SqoFCHqQG0RxC-yL3_G0
+
+### access point
+GET {{local}}/api/cards
+x-auth-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWZlZGIzODE3NzEwNGQ5MTU5OThiZTkiLCJiaXoiOnRydWUsImlhdCI6MTY0NDA5MjIzMX0.nKbVEYQLc_WKkthvLDUKHljLWl_Kf6mWrGc0-VMgr1g
+Content-Type:application/json
+

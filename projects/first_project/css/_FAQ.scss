@@ -1,0 +1,57 @@
+$Purple_MG: #9453a6;
+$Green_MG: #8cbf3f;
+$Yellow_MG: #f2cc0f;
+$White_MG: #f2f2f2;
+$Black_MG: #0d0d0d;
+$primary: hsl(290, 80%, 50%);
+$primary-light: linear-gradient(
+  to right,
+  rgb(249, 250, 217),
+  #fcfc92,
+  #aefaa7,
+  rgba(17, 134, 33, 0.6)
+);
+
+$secondary: hsl(350, 80%, 50%);
+
+$red: hsl(10, 80%, 50%);
+$orange: hsl(50, 80%, 50%);
+
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pattaya&display=swap");
+
+$title_font: "Pattaya";
+$title_font2: "Henny Penny";
+$text_font: "Roboto", sans-serif;
+
+@mixin mobile($size: 640px) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+.accordion {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.accordion-body {
+  font-size: 1.2em;
+  text-align: justify;
+  font-family: $text_font;
+}
+
+.accordion-button {
+  background-color: $Yellow_MG;
+  font-family: pattaya;
+  color: indigo;
+  font-size: 0.8em;
+
+  &:not(.collapsed) {
+    color: rgb(12, 12, 9);
+    background-color: $Green_MG;
+    text-shadow: 2px 2px #fff;
+  }
+}
